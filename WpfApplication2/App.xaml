@@ -1,0 +1,51 @@
+﻿<Application x:Class="WpfApplication2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApplication2"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="Brush1" Color="#FF3399FF"/>
+        <SolidColorBrush x:Key="QueryBrush" Color="#FFFF8560" />
+        <SolidColorBrush x:Key="InsertBrush" Color="#FF3399FF" />
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="HorizontalContentAlignment" Value="center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="BorderBrush" Value="{x:Static Brushes.Black}"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Brush1}"></Setter>
+                    <Setter Property="Panel.ZIndex" Value="2"></Setter>
+                </Trigger>
+                <!--Trigger Property="IsHighlight" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource Brush1}"></Setter>
+                    <Setter Property="Panel.ZIndex" Value="2"></Setter>
+                </-->
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Query" TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource QueryBrush}"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource QueryBrush}"></Setter>
+            <Setter Property="Panel.ZIndex" Value="2"></Setter>
+        </Style>
+        <Style x:Key="Insert" TargetType="TextBox">
+            <Setter Property="Panel.ZIndex" Value="3"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource InsertBrush}"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource InsertBrush}"></Setter>
+            <Setter Property="Panel.ZIndex" Value="2"></Setter>
+        </Style>
+        <Style x:Key="EdgeStyle" TargetType="Shape">
+            <Setter Property="Stroke" Value="{StaticResource HighlightBrush}"></Setter>
+            <Setter Property="StrokeThickness" Value="2"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="B-Tree Visualization" Height="342.047" Width="614.79">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="B-Tree Visualization" HorizontalAlignment="Center" FontSize="21.333"/>
+        <Canvas x:Name="canvas" SizeChanged="canvas_SizeChanged" Margin="0,20,0,5" Grid.Row="1">
+        </Canvas>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="15,5,15,15">
+                <TextBox x:Name="InsertInputBox" Height="20"  TextWrapping="Wrap" Text="" Width="50" BorderBrush="#FFABADB3" PreviewTextInput="NumberValidation" KeyDown="InsertKeyDown" Margin="0,0,7,0"/>
+                <Button x:Name="InsertButton" Content="Insert" Width="61" Height="20" Click="InsertButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="15,5,15,15">
+                <TextBox x:Name="DeleteInputBox" Height="20" TextWrapping="Wrap" Text="" Width="50" BorderBrush="#FFABADB3" PreviewTextInput="NumberValidation" KeyDown="DeleteKeyDown" Margin="0,0,7,0"/>
+                <Button x:Name="DeleteButton" Content="Delete" Width="61" Height="20" Click="DeleteButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="15,5,15,15">
+                <TextBox x:Name="QueryInputBox" Height="20" TextWrapping="Wrap" Text="" Width="50" BorderBrush="#FFABADB3" PreviewTextInput="NumberValidation" KeyDown="QueryKeyDown" Margin="0,0,7,0"/>
+                <Button x:Name="QueryButton" Content="Query" Width="61" Height="20" Click="QueryButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
